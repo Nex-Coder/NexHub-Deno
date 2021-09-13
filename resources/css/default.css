@@ -1,0 +1,701 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Bebas Neue', cursive;
+  src: url(https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap);
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Moon Light';
+  src: url('https://web.nexhub.co.uk/resources/fonts/Moon/Moon-Light.otf') format("opentype");
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Moon Bold';
+  src: url('https://web.nexhub.co.uk/resources/fonts/Moon/Moon-Bold.otf') format("opentype");
+
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Media Queries. */
+@media (orientation: landscape) {
+  div.blur-box {
+    margin: 50px 25vw auto;
+    width: 50vw;
+    height: 95vh;
+  }
+  .blur-box h2 {
+    font-size: calc(1vw + 2.5vh);
+  }
+
+  .blur-box p {
+    font-size: calc((1vw + 2.5vh) / 2.25);
+  }
+}
+
+@media (orientation: portrait) {
+  div.blur-box {
+    margin: 50px 10vw auto;
+    width: 80vw;
+    min-width: 540px;
+    min-height: 960px;
+    height: calc(98vh - 50px);
+  }
+  .blur-box h2 {
+    font-size: calc(2.5vw + 1vh);
+  }
+
+  .blur-box p {
+    font-size: calc((2.5vw + 1vh) / 2.25);
+  }
+}
+
+
+/*/// Global Defaults ///*/
+
+/*// Headers //*/
+h1, h2, h3, h4, h5, h6, th {
+  font-family: 'Bebas Neue', 'Moon Bold', sans-serif;
+}
+
+.header-defaults {
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  margin: 0 auto;
+}
+
+/* Default text sizes */
+h1 { font-size: 72px; }
+h2 { font-size: 48px; }
+h3 { font-size: 32px; }
+h4 { font-size: 24px; }
+h5 { font-size: 20px; }
+h6 { font-size: 18px; }
+th { font-size: 18px; }
+
+/*// Text & Body //*/
+
+body {
+  margin:0;
+  overflow-x: hidden;
+  display: inline-block;
+  font-family: 'Moon Light', sans-serif;
+  font-size: 12px;
+  color: white;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+
+.body-container {
+  min-height: calc(100vh - 54px);
+  min-width: 100vw;
+}
+
+#navbar-spacer {
+  width: 100vw;
+  height: 0;
+  margin-top: 43px;
+}
+
+/* Scroll Bar (Non-atomic but global) */
+
+html {
+  margin: 0;
+  scrollbar-face-color: #646464;
+  scrollbar-base-color: #646464;
+  scrollbar-3dlight-color: #646464;
+  scrollbar-highlight-color: #646464;
+  scrollbar-track-color: #000;
+  scrollbar-arrow-color: #000;
+  scrollbar-shadow-color: #646464;
+  scrollbar-dark-shadow-color: #646464;
+}
+
+::-webkit-scrollbar { width: 8px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: #666; height: 0;}
+::-webkit-scrollbar-track {  background-color: #646464;}
+::-webkit-scrollbar-track-piece { background-color: #000;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #646464;}
+::-webkit-resizer { background-color: #666;}
+
+/*/// NavBar ///*/
+
+nav {
+  list-style-type: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  padding: 0;
+  margin:0;
+  border: 0;
+  position: fixed;
+  width: 100vw;
+  display: inline-flex;
+  float: none;
+  z-index: 10;
+  background-color:rgba(27, 27, 29, 0.75);
+  overflow: hidden;
+}
+
+nav img {
+  margin-top: 2px;
+  margin-bottom: -11px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 6px 7px;
+  margin: -1px;
+}
+
+nav a:hover {
+  background-color: #494949;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-dropdown {
+  margin-left: auto;
+  overflow: hidden;
+  display: inline-grid;
+}
+
+nav a.navbar-login {
+  margin-left: auto;
+  padding-right: 10px;
+  min-width: 120px;
+  text-align-last: justify;
+}
+
+.navbar-dropdown {
+  position: fixed;
+  margin-top: 40px;
+  width: 100vw;
+  z-index: 11;
+}
+
+.navbar-dropdown-content {
+  margin-left: auto;
+  background-color:rgba(27, 27, 29, 0.75);
+  display: grid;
+}
+
+.navbar-dropdown-content a {
+  list-style-type: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  padding-left: 6px;
+  padding-right: 10px;
+}
+
+.navbar-dropdown-content a:hover {
+  background-color: #494949;
+  color: white;
+  text-decoration: none;
+}
+
+.top-spacer { /* For use in bodies to remove white space at top. */
+  margin-top: 50px;
+}
+
+/*/ Globally Misc. /*/
+
+.top-spacer {
+  margin-top: 50px;
+}
+
+/* Tables */
+
+.table-container {
+  max-height: 47.5vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  /* padding-top: 100px; */
+}
+
+.table {
+  width:100%
+}
+
+table td {
+  word-wrap: break-word;
+  max-width: 150px;
+  text-decoration: none;
+}
+
+table a {
+  color: white;
+}
+
+/* Table Columns */
+.sticky-col {
+  position: sticky;
+  position: -webkit-sticky;
+  background-color: crimson;
+}
+
+.first-col {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  left: 0;
+}
+
+.second-col {
+  width: 150px;
+  min-width: 150px;
+  max-width: 150px;
+  left: 100px;
+}
+
+.third-col {
+  width: calc(10vw + 200px);
+  min-width: 150px;
+  max-width: 400px;
+  left: 100px;
+}
+
+/*/// Page Containers ///*/
+
+.page-container-1 {
+  width: 95%;
+  margin: 15px auto 0 auto;
+}
+
+.page-header {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.page-sub-header {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.page-content-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.content-box {
+  border: 1px solid crimson;
+  border-radius: 8px;
+  width: calc((20vw + 20vh) / 2);
+  height: calc((20vw + 20vh) / 1.4);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.content-box h6 {
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  font-family: "Moon Bold", sans-serif;
+  font-size: calc((20vw + 20vh) / 30);
+}
+
+.content-box p {
+  font-size: calc((20vw + 20vh) / 40);
+}
+
+.content-box > img {
+  width: calc((20vw + 20vh) / 2);
+  height: calc((20vw + 20vh) / 2);
+  object-fit: cover;
+  margin: auto;
+}
+
+/*/// Atomic Line Element ///*/
+
+.page-header {
+  display: inline-flex;
+}
+
+.page-header > img {
+  width: 20%;
+  height: 20%;
+  margin: auto;
+  filter: invert(75%);
+}
+
+.page-sub-header > h1,h2,h3,h4,h5,h6 {
+  width: fit-content;
+  margin: auto;
+}
+
+.page-sub-header {
+  display: inline-flex;
+}
+
+.page-sub-header > img {
+  width: 20%;
+  height: 20%;
+  margin: auto;
+  filter: invert(75%);
+}
+
+.page-sub-header > .line-element-left {
+  margin-left: 2.5%;
+}
+
+.page-sub-header > .line-element-right {
+  margin-right: 2.5%;
+}
+
+.page-header  > h1,h2,h3,h4,h5,h6 {
+  width: fit-content;
+  margin: auto;
+}
+
+
+.line-element-full {
+  display: inline-flex;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.line-element-full > img {
+  width: 35%;
+  margin: auto;
+  filter: invert(75%);
+}
+
+/*/// Upload/Download Specific ///*/
+
+
+.upload > .file-drop {
+  height: auto;
+  width: calc(80% + 80px);
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 3px 0 0 0;
+}
+
+.privateOptions {
+  display: none;
+  width: 100%;
+}
+
+.upload > .privateOptions .break {
+  padding-top: 5px;
+}
+
+
+/*/// Downloads ///*/
+
+.downloads-content {
+  margin-top: 7.5vh;
+  display: grid;
+}
+
+.downloads-content * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.download-image-preview {
+  margin-top: 2%;
+  border-radius: 45px;
+  width: 150px;
+  height: 150px;
+}
+
+.info-display {
+  width: calc(50vw + 400px);
+  padding: 10px;
+  background-color: rgba(83, 83, 83, 0.75);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 0 auto 0 auto;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+  opacity: 75%;
+}
+
+.download-button {
+  background-color: #dc1414;
+  color: white;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  border: 0;
+  border-radius: 16px;
+  padding: 18px;
+
+}
+
+#download-button {
+  margin-right: auto;
+}
+
+#download-button-spacer {
+  margin: 5% auto 5% auto;
+}
+
+.download-multi-container {
+  width: 62vw;
+  min-width: 420px;
+  height: 50vh;
+  min-height: 275px;
+  overflow: hidden;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 11px;
+  border: 2px solid crimson;
+  background-color: rgba(40, 40, 40, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.download-single-container {
+  width: 40vw;
+  min-width: 425px;
+  height: 15vh;
+  display: block;
+  margin: auto;
+  border-radius: 11px;
+  border: 2px solid crimson;
+  background-color: rgba(40, 40, 40, 0.8);
+  overflow-x: auto;
+}
+
+.download-multi-description {
+  width: 100%;
+  border-top: 2px solid crimson;
+
+  height: 25%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  justify-content: left;
+  align-content: flex-start;
+
+}
+
+.download-multi-description-text {
+  text-decoration: none;
+  font-family: 'Moon Light', cursive;
+  font-size: calc(calc(1vw + 1vh) / 2);
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  margin: 2.5px;
+}
+
+.download-multi-description > br {
+  line-height:22px;
+}
+
+.download-multi-box {
+  width: auto;
+  height: 65%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.download-multi-instance {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  position: relative;
+  background-color: #171717;
+  height: calc(calc(10vw + 10vh) / 2);
+  width: calc(calc(10vw + 10vh) / 2);
+  border-radius: 7px;
+  border: 1px crimson solid;
+  overflow: hidden;
+  font-family: 'Moon Light', cursive;
+}
+
+.download-multi-instance:hover {
+  background-color: #000000;
+  border: 1px red solid;
+}
+
+.download-multi-instance > .download-img {
+  width: 65%;
+  height: 65%;
+  margin: 10% auto auto;
+  filter: invert(1); /* Make it white */
+  display: none;
+}
+
+.download-multi-instance > .file-label {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  width: 98%;
+  text-align: center;
+  max-height: 28%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: calc(calc(1vw + 1vh) / 2);
+}
+
+.download-multi-instance:hover > .download-img {
+  display: block;
+}
+
+
+.download-multi-thumbnail {
+  max-width: 80%;
+  max-height: 80%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 10%;
+  border-radius: 7px;
+}
+
+.download-multi-header {
+  width: 108%;
+  border-bottom: 2px solid crimson;
+  margin-bottom: 10px;
+  font-size: calc(calc(calc(calc(1vw + 1vh) / 2) / 2) + 10px);
+  height: 10%;
+  max-height: 50px;
+
+}
+
+.download-multi-header {
+  width: 100%;
+  text-align: center;
+}
+
+.download-file-size {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 1px;
+  display: none;
+  font-size: calc(calc(1vw + 1vh) / 2);
+}
+
+.download-multi-instance:hover > .download-file-size {
+  display: block;
+}
+
+/* Hovers */
+
+/* Override Section (for stuff that needs to be last) */
+
+#radioPublicLabel {
+  margin-right: 1%;
+}
+
+
+#radioPrivateLabel {
+  margin-left: 1%;
+}
+
+/*/ Atomic Button Class /*/
+
+.cursor-pointing {cursor: pointer;}
+
+.text-absolute-right {
+  text-align: right;
+  position: absolute;
+  right: 0;
+}
+
+.text-absolute-left {
+  text-align: left;
+  width: 100%;
+  margin: initial;
+  position: absolute;
+}
+
+.styled-button {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 0;
+  background-color: crimson;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+  border-radius: 0 0 6px 6px;
+}
+
+.styled-button:hover {
+  background-color: crimson;
+  transition: background-color 0.2s;
+}
+
+.align-margin-horizontal {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+/*/ Animations /*/
+
+/* Slide from left to right. */
+.slide {
+  text-align: left;
+  position: absolute;
+  left: -400px;
+  animation: slide 2s forwards, fadeIn ease 2.5s;
+  animation-delay: 1s;
+}
+
+@keyframes slide {
+  100% { left: 100px; }
+}
+
+/* Fade in */
+.fade-in {
+  animation: fadeIn ease 20s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+/* Fade out */
+.fade-out {
+  animation: fadeOut ease 3.5s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+
+/* Atomic Only */
+
+.align-center {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+}

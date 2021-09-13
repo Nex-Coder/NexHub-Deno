@@ -1,0 +1,27 @@
+/*Default background atomic CSS */
+
+.background-container {
+  overflow:hidden;
+  position:fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.background-container-img {
+  overflow:hidden;
+  position:fixed;
+  width: 100vw;
+  height: 100vh;
+  background-image:url("/resources/img/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  z-index: -2;
+}
+
+.blur {
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
