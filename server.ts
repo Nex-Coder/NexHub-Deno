@@ -1,4 +1,10 @@
-  // app.ts
+  // NexHub Server
+  /* todo 
+    figure out how to catch file not found and return proper 404 error
+    make a test & experimental subdomain for testing
+    make sure the deno is running servers on startup
+    lookin to tus js https://github.com/tus/tus-js-client/blob/master/docs/installation.md
+*/
   import { parse } from "https://deno.land/std@0.106.0/flags/mod.ts";
   import { Application, Router, send} from "https://deno.land/x/oak@v6.2.0/mod.ts";
   import {
@@ -18,6 +24,12 @@
   const publicResources = "/resources"
 
   router
+  .get("/",(ctx) => {
+    ctx.render(viewPath+"index.ejs", {data: {name: 'David'}});
+  })
+  .get("/test", (ctx) => {
+      ctx.render(viewPath+"deno.ejs", {data: {name: 'David', out: ctx.request.url}});
+  })
   .get("/resources/(.*)", async (ctx) => {
     await send(ctx, ctx.request.url.pathname.substring(publicResources.length), {
       root: `${Deno.cwd()}${publicResources}`,
