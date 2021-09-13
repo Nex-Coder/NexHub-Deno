@@ -1,4 +1,4 @@
-  // NexHub Server 1
+  // NexHub Server
   /* todo 
     figure out how to catch file not found and return proper 404 error
     make a test & experimental subdomain for testing
