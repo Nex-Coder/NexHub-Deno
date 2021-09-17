@@ -6,6 +6,5 @@ const viewPath = routerStore.directories.view
 
 router
 .get("/", async (ctx) => {
-    ctx.upgrade.
     await ctx.render(`${viewPath}/index.ejs`, {data: {name: 'David'}});
 });
