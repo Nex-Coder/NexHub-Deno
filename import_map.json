@@ -1,0 +1,14 @@
+{
+    "imports": {
+        "store": "https://deno.land/x/storeosaurus@2.0.1/mod.ts",
+        "oak": "https://deno.land/x/oak@v6.2.0/mod.ts",
+        "std": "https://deno.land/std@0.106.0/flags/mod.ts",
+        "view_engine": "https://deno.land/x/view_engine@v1.4.5/mod.ts",
+
+        "config": "./app/config/main.ts",
+
+        "app/": "./app/",
+        "lib/": "./lib/",
+        "config/": "./app/config/"
+    }
+}
